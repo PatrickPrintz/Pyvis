@@ -13,7 +13,7 @@ hv.extension('bokeh')
 from bokeh.plotting import show
 
 
-# We define the URL for the raw edgelist file from our created GitHub repository.
+# We define the URL for the raw edgelist file from our created GitHub repository..
 github_edgelist_url = 'https://raw.githubusercontent.com/CamillaSSvendsen/M2/main/congress.edgelist'
 
 # To get access to the data in the edgelist file from the GitHub repository, we use the urllib.request library.
