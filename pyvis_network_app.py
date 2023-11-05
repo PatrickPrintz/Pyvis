@@ -34,7 +34,7 @@ visualization_option = st.selectbox(
 if visualization_option == "In-Degree Centrality":
     in_degree_centrality = nx.in_degree_centrality(G)
     in_sorted_nodes = sorted(in_degree_centrality, key=in_degree_centrality.get, reverse=True)
-    in_subgraph = G.subgraph(in_sorted_nodes[:25])
+    in_subgraph = G.subgraph(in_sorted_nodes[:50])
        # Initiate PyVis network object
     drug_net = Network(
                        height='400px',
