@@ -67,7 +67,7 @@ else:
     # We set up a networkx layout, to make sure, we get the same layout, evertime we load a visualization of a network.
     G_layout = nx.layout.kamada_kawai_layout(G)
 
-    
+
 
     # Initiate PyVis network object
     drug_net = Network(
@@ -82,9 +82,9 @@ else:
 
     # Generate network with specific layout settings
     drug_net.repulsion(
-                        node_distance=800,
-                        central_gravity=0.60,
-                        spring_length=110,
+                        node_distance=100,
+                        central_gravity=0.90,
+                        spring_length=11,
                         spring_strength=0.20,
                         damping=0.90
                        )
@@ -102,7 +102,7 @@ else:
         HtmlFile = open(f'{path}/pyvis_graph.html', 'r', encoding='utf-8')
 
     # Load HTML file in HTML component for display on Streamlit page
-    components.html(HtmlFile.read(), height=435)
+    components.html(HtmlFile.read(), height=800)
 
 # Footer
 st.markdown(
