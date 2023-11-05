@@ -311,9 +311,9 @@ elif visualization_option == "Eigenvector Centrality":
 
 elif visualization_option == "Betweenness Centrality":
  st.write("""
-Betweenness centrality is about detecting which nodes are crucial for the flow between nodes. Nodes with high betweenness centrality are like bridges between other pairs of nodes in the network.
-It measures how frequently a node lies on the shortest paths between pairs of other nodes in the network.
-To calculate the betweenness centrality of a node, you consider all pairs of nodes in the network and count how many times the node in question falls on the shortest path between them. The more often it's on these paths, the higher its betweenness centrality.
+Betweenness centrality is about detecting which nodes are crucial for the flow between nodes. Nodes with high betweenness centrality are like bridges between other pairs of nodes in the network. \n
+It measures how frequently a node lies on the shortest paths between pairs of other nodes in the network.\n
+To calculate the betweenness centrality of a node, you consider all pairs of nodes in the network and count how many times the node in question falls on the shortest path between them. The more often it's on these paths, the higher its betweenness centrality.\n
           """)
 
  
