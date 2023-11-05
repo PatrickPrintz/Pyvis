@@ -32,7 +32,14 @@ else:
     # We then use the NetworkX library to read the edgelist as a directed graph (DiGraph) and define it G.
     G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
     # Create networkx graph object from pandas dataframe
+    in_degree_centrality = nx.in_degree_centrality(G)
 
+    # We then sort the nodes by in-degree centrality in descending order.
+    in_sorted_nodes = sorted(in_degree_centrality, key=in_degree_centrality.get, reverse=True)
+
+    # In the last line of code we define the subgraph to include the 75 node with the highest in-degree centrality.
+    in_subgraph = G.subgraph(in_sorted_nodes[:10])
+    
     # Initiate PyVis network object
     drug_net = Network(
                        height='400px',
@@ -42,7 +49,7 @@ else:
                       )
 
     # Take Networkx graph and translate it to a PyVis graph format
-    drug_net.from_nx(G)
+    drug_net.from_nx(in_subgraph)
 
     # Generate network with specific layout settings
     drug_net.repulsion(
