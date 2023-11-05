@@ -18,7 +18,6 @@ import streamlit.components.v1 as components
 import pandas as pd
 import networkx as nx
 from pyvis.network import Network
-import gravis as gv
 import networkx as nx
 
 
