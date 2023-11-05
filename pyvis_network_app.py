@@ -72,5 +72,4 @@ g.add_edge(20, 21, weight=5)
 g.add_node(25, size=25, label='lonely', title='lonely node', group=3, color='green')
 
 gv.d3(g)
-HtmlFile = open(gv.d3(g), encoding='utf-8')
-components.html(HtmlFile.read(), height=1200)
+gv.d3(g)
