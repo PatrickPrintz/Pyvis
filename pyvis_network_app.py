@@ -67,7 +67,6 @@ else:
         i += 1
     
     # We set up a networkx layout, to make sure, we get the same layout, evertime we load a visualization of a network.
-    G_layout = nx.layout.kamada_kawai_layout(G)
 
 
 
