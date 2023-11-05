@@ -324,3 +324,7 @@ elif visualization_option == "Community Detection":
  st.write("Community detection can also help to more easily identify if the network has outliers in form of nodes that do not share characteristics with other nodes or are less connected than other nodes in the network.")
  st.write("All nodes in a community does not have to be directly connected to each other")
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Community%20tabel.JPG?raw=true")
+
+
+with st.expander("If you want to see our Network analysis of the key node from Truth Social ") :
+    st.image("https://media.newyorker.com/photos/64e7fb05eeb2b9a4560ab8c9/master/w_2560%2Cc_limit/Trump-Mugshot-Final.jpg")
