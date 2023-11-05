@@ -49,10 +49,10 @@ else:
 
     # Initiate PyVis network object
     drug_net = Network(
-                       height='4000px',
+                       height='40px',
                        width='100%',
-                       bgcolor='#222222',
-                       font_color='white'
+                       bgcolor='#333333',
+                       font_color='blue'
                       )
 
     # Take Networkx graph and translate it to a PyVis graph format
@@ -60,11 +60,11 @@ else:
 
     # Generate network with specific layout settings
     drug_net.repulsion(
-                        node_distance=42,
-                        central_gravity=0.70,
+                        node_distance=800,
+                        central_gravity=0.60,
                         spring_length=110,
-                        spring_strength=0.10,
-                        damping=0.95
+                        spring_strength=0.20,
+                        damping=0.90
                        )
 
     # Save and read graph as HTML file (on Streamlit Sharing)
