@@ -82,13 +82,13 @@ else:
     drug_net.from_nx(G)
 
     # Generate network with specific layout settings
-    drug_net.repulsion(
-                        node_distance=100,
-                        central_gravity=0.90,
-                        spring_length=11,
-                        spring_strength=0.20,
-                        damping=0.90
-                       )
+    #drug_net.repulsion(
+     #                   node_distance=100,
+      #                  central_gravity=0.90,
+       #                 spring_length=11,
+        #                spring_strength=0.20,
+         #               damping=0.90
+          #             )
 
     # Save and read graph as HTML file (on Streamlit Sharing)
     try:
@@ -103,7 +103,7 @@ else:
         HtmlFile = open(f'{path}/pyvis_graph.html', 'r', encoding='utf-8')
 
     # Load HTML file in HTML component for display on Streamlit page
-    components.html(HtmlFile.read(), height=800)
+    components.html(HtmlFile.read(), height=1200)
 
 # Footer
 st.markdown(
