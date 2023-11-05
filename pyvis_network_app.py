@@ -38,7 +38,7 @@ else:
     in_sorted_nodes = sorted(in_degree_centrality, key=in_degree_centrality.get, reverse=True)
 
     # In the last line of code we define the subgraph to include the 75 node with the highest in-degree centrality.
-    in_subgraph = G.subgraph(in_sorted_nodes[:10])
+    in_subgraph = G.subgraph(in_sorted_nodes[:100])
     
     # Initiate PyVis network object
     drug_net = Network(
