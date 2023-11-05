@@ -49,7 +49,7 @@ else:
 
     # Initiate PyVis network object
     drug_net = Network(
-                       height='400px',
+                       height='4000px',
                        width='100%',
                        bgcolor='#222222',
                        font_color='white'
@@ -60,8 +60,8 @@ else:
 
     # Generate network with specific layout settings
     drug_net.repulsion(
-                        node_distance=420,
-                        central_gravity=0.33,
+                        node_distance=42,
+                        central_gravity=0.70,
                         spring_length=110,
                         spring_strength=0.10,
                         damping=0.95
