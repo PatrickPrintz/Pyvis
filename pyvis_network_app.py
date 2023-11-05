@@ -23,7 +23,7 @@ import networkx as nx
 
 
 # Set header title
-st.title('Network Graph Visualization of Drug-Drug Interactions')
+st.title('Network Graph Visualization of Drug-Drug hej Interactions')
 
 github_edgelist_url = 'https://raw.githubusercontent.com/CamillaSSvendsen/M2/main/congress.edgelist'
 
