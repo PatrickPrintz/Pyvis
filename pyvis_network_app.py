@@ -5,42 +5,37 @@ import networkx as nx
 from pyvis.network import Network
 import urllib.request
 
-# Read dataset (CSV)
-# Set header title
-st.title('Network Graph Visualization of Drug-Drug Interactions')
+github_edgelist_url = 'https://raw.githubusercontent.com/CamillaSSvendsen/M2/main/congress.edgelist'
 
-# Define list of selection options and sort alphabetically
-drug_list = ['Metformin', 'Glipizide', 'Lisinopril', 'Simvastatin',
-            'Warfarin', 'Aspirin', 'Losartan', 'Ibuprofen']
-drug_list.sort()
+# To get access to the data in the edgelist file from the GitHub repository, we use the urllib.request library.
+edgelist_file = urllib.request.urlopen(github_edgelist_url)
 
-# Implement multiselect dropdown menu for option selection (returns a list)
-selected_drugs = st.multiselect('Select drug(s) to visualize', drug_list)
+# We then use the NetworkX library to read the edgelist as a directed graph (DiGraph) and define it G.
+G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
+
+
+
+st.title("Network Analysis for Twitter interactions for the US Congress")
+
+st.header("In this app you can see a network analysis of the Twitter interactions between US Congress members. Pick the kind of Centrality you would like to look at from the dropdown menu and become informed", divider = "gray")
+
+
+visualization_option = st.selectbox(
+    "Select Visualization", 
+    ["In-Degree Centrality",
+     "Out-Degree Centrality",
+     "Eigenvector Centrality",
+     "Betweenness Centrality",
+     "Community Detection"
+    ]
+)
 
 # Set info message on initial site load
-if len(selected_drugs) == 0:
-    st.text('Choose at least 1 drug to start')
-
-# Create network graph when user selects >= 1 item
-else:
-    #G = nx.cycle_graph(10)
-    github_edgelist_url = 'https://raw.githubusercontent.com/CamillaSSvendsen/M2/main/congress.edgelist'
-
-    # To get access to the data in the edgelist file from the GitHub repository, we use the urllib.request library.
-    edgelist_file = urllib.request.urlopen(github_edgelist_url)
-
-    # We then use the NetworkX library to read the edgelist as a directed graph (DiGraph) and define it G.
-    G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
-    # Create networkx graph object from pandas dataframe
+if visualization_option == "In-Degree Centrality":
     in_degree_centrality = nx.in_degree_centrality(G)
-
-    # We then sort the nodes by in-degree centrality in descending order.
     in_sorted_nodes = sorted(in_degree_centrality, key=in_degree_centrality.get, reverse=True)
-
-    # In the last line of code we define the subgraph to include the 75 node with the highest in-degree centrality.
-    in_subgraph = G.subgraph(in_sorted_nodes[:75])
-    
-    # Initiate PyVis network object
+    in_subgraph = G.subgraph(in_sorted_nodes[:10])
+       # Initiate PyVis network object
     drug_net = Network(
                        height='400px',
                        width='100%',
@@ -74,13 +69,3 @@ else:
 
     # Load HTML file in HTML component for display on Streamlit page
     components.html(HtmlFile.read(), height=435)
-
-# Footer
-st.markdown(
-    """
-    <br>
-    <h6><a href="https://github.com/kennethleungty/Pyvis-Network-Graph-Streamlit" target="_blank">GitHub Repo</a></h6>
-    <h6><a href="https://kennethleungty.medium.com" target="_blank">Medium article</a></h6>
-    <h6>Disclaimer: This app is NOT intended to provide any form of medical advice or recommendations. Please consult your doctor or pharmacist for professional advice relating to any drug therapy.</h6>
-    """, unsafe_allow_html=True
-    )
