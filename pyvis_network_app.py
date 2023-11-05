@@ -17,9 +17,14 @@ G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
 
 st.title("Network Analysis for Twitter interactions for the US Congress")
 
-st.header("In this app you can see a network analysis of the Twitter interactions between US Congress members. Pick the kind of Centrality you would like to look at from the dropdown menu and become informed", divider = "gray")
 
 
+st.write("""
+
+    In this app you can see a network analysis of the Twitter interactions between US Congress members. 
+    Pick the kind of Centrality you would like to look at from the dropdown menu and become informed 
+
+         """)
 visualization_option = st.selectbox(
     "Select Visualization", 
     ["In-Degree Centrality",
@@ -261,28 +266,23 @@ if visualization_option == "In-Degree Centrality":
  st.write("A high in-degree centrality in this graph means that a lot of the other people in the network retweets, quote-tweets, reponds to, and mentions your tweet.")
  st.write("In-degree centrality is calculated as the number of actual incoming edges to a node compared to all the possible incoming edges.")
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Indegree%20tabel.JPG?raw=true")
- st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Indegree%20graf.JPG?raw=true")
 
 elif visualization_option == "Out-Degree Centrality":
  st.write("Out-degree centrality measures how many outgoing connections a node has. It tells us how many other nodes that node is connected to.")
  st.write("A high out-degree centrality in this graph means that the person retweets, quote-tweets, reponds to, and/or mentions a lot of different people's tweets.")
  st.write("Out-degree centrality is calculated as the number of actual outgoing edges to a node compared to all the possible outgoing edges.")
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Outdegree%20tabel.JPG?raw=true")
- st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Outdegree%20graf.JPG?raw=true")
 
 elif visualization_option == "Eigenvector Centrality":
  st.write("Eigenvector centrality is a key concept in network analysis. It is used to measure the influence or importance of nodes in the network. It is useful for identifying nodes that are not only well-connected but also connected to other highly central nodes. Eigenvector centrality is based on the idea that the importance of a node is determined by the importance of its neighbors.")
  st.write("Eigenvector centrality assigns a centrality score to each node in the network. This score is based on both the nodes own centrality value and the centrality value of the neighboring nodes.")
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Eigenvector%20tabel.JPG?raw=true")
- st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Eigenvector%20graf.JPG?raw=true")
 
 elif visualization_option == "Betweenness Centrality":
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Betwenness%20tabel.JPG?raw=true")
- st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Betwenness%20graf.JPG?raw=true")
 
 elif visualization_option == "Community Detection":
  st.write("Community detection helps reveal the network's modular or hierarchical organization by identifying groups of nodes (communities) that are more densely connected to each other than to the rest of the network.")
  st.write("Community detection can also help to more easily identify if the network has outliers in form of nodes that do not share characteristics with other nodes or are less connected than other nodes in the network.")
  st.write("All nodes in a community does not have to be directly connected to each other")
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Community%20tabel.JPG?raw=true")
- st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Community%20graf.JPG?raw=true")
