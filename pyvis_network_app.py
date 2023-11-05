@@ -310,6 +310,13 @@ elif visualization_option == "Eigenvector Centrality":
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Eigenvector%20tabel.JPG?raw=true")
 
 elif visualization_option == "Betweenness Centrality":
+ st.write("""
+Betweenness centrality is about detecting which nodes are crucial for the flow between nodes. Nodes with high betweenness centrality are like bridges between other pairs of nodes in the network.
+It measures how frequently a node lies on the shortest paths between pairs of other nodes in the network.
+To calculate the betweenness centrality of a node, you consider all pairs of nodes in the network and count how many times the node in question falls on the shortest path between them. The more often it's on these paths, the higher its betweenness centrality.
+          """)
+
+ 
  st.image("https://github.com/SeniorHreff/M2-Assignment/blob/main/Screenshots%20til%20app/Betwenness%20tabel.JPG?raw=true")
 
 elif visualization_option == "Community Detection":
