@@ -3,6 +3,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import networkx as nx
 from pyvis.network import Network
+import urllib.request
 
 # Read dataset (CSV)
 # Set header title
@@ -22,8 +23,14 @@ if len(selected_drugs) == 0:
 
 # Create network graph when user selects >= 1 item
 else:
-    G = nx.cycle_graph(10)
+    #G = nx.cycle_graph(10)
+    github_edgelist_url = 'https://raw.githubusercontent.com/CamillaSSvendsen/M2/main/congress.edgelist'
 
+    # To get access to the data in the edgelist file from the GitHub repository, we use the urllib.request library.
+    edgelist_file = urllib.request.urlopen(github_edgelist_url)
+
+    # We then use the NetworkX library to read the edgelist as a directed graph (DiGraph) and define it G.
+    G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
     # Create networkx graph object from pandas dataframe
 
     # Initiate PyVis network object
