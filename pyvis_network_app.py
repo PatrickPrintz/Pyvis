@@ -50,6 +50,7 @@ else:
     # From this file we are interested in the list of usernames.
     # In this step, we iterate through the edges of the graph G and add data to the DataFrame.
     # The for loop extracts the source node, the target node, and the weight for each edge in the graph, and assigns these values in the DataFrame.
+    df = pd.DataFrame(columns=['Source', 'Target', 'Weight'])
     for a, b, wei in G.edges(data=True):
         source, target, weight = a, b, wei.get('weight', None)
         df = df.append({'Source': source, 'Target': target, 'Weight': weight}, ignore_index=True)
