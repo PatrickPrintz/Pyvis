@@ -18,6 +18,8 @@ import streamlit.components.v1 as components
 import pandas as pd
 import networkx as nx
 from pyvis.network import Network
+import gravis as gv
+import networkx as nx
 
 
 # Set header title
@@ -55,8 +57,7 @@ for node in G.nodes():
 # We set up a networkx layout, to make sure, we get the same layout, evertime we load a visualization of a network.
 
 
-import gravis as gv
-import networkx as nx
+
 
 g = nx.cycle_graph(10)
 g.graph['node_color'] = 'blue'
