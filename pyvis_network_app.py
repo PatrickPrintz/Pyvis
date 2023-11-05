@@ -21,7 +21,7 @@ st.title("Network Analysis for Twitter interactions for the US Congress")
 
 st.write("""
 
-    In this app you can see a network analysis of the Twitter interactions between US Congress members. 
+    In this app you can see a network analysis of the Twitter interactions between US Congress members. \n
     Pick the kind of Centrality you would like to look at from the dropdown menu and become informed 
 
          """)
