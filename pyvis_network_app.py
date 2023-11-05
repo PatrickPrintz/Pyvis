@@ -21,10 +21,10 @@ from pyvis.network import Network
 
 
 # Set header title
-st.title('Network Graph Visualization of Drug-Drug Interactions')
+st.title('Network Graph Visualization of Drug-Drug hej Interactions')
 
 # Define list of selection options and sort alphabetically
-drug_list = ['Metformin', 'Glipizide', 'Lisinopril', 'Simvastatin',
+drug_list = ['Metformin', 'Glipizide', 'Lisinopril', ' Simvastatin',
             'Warfarin', 'Aspirin', 'Losartan', 'Ibuprofen']
 drug_list.sort()
 
