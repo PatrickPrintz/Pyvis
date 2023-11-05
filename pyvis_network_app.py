@@ -7,11 +7,9 @@ import pyvis
 import json
 import urllib.request # This library is used to get access to the edgelist file in the GitHub repository
 from pyvis.network import Network
-!pip install holoviews
 import holoviews as hv
 from holoviews import opts
 hv.extension('bokeh')
-!pip install bokey
 from bokeh.plotting import show
 
 
