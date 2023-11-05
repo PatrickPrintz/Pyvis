@@ -17,11 +17,42 @@ G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
 
 st.title("Network Analysis for Twitter interactions for the US Congress")
 
+st.write("""
+         We have chosen to work with the "*Twitter Interaction Network for the US Congress*" dataset.
 
+Data stems from SNAP which is a Stanford Large Network Dataset Collection.
+
+From the webpage the dataset is described like this:\n
+
+
+
+* This network represents the Twitter interaction network for the 117th United States Congress, both House of Representatives and Senate. The base data was collected via the Twitter’s API, then the empirical transmission probabilities were quantified according to the fraction of times one member retweeted, quote tweeted, replied to, or mentioned another member’s tweet.
+
+From the webpage we also get the folloing dataset statistics:
+
+
+
+* We know that the dataset consist of 475 nodes and 13.289 edges. We also know that the edges are directed and that there are edge features in form of weights. \n
+
+The dataset doesn't have any attribes for the nodes besides the username for the Twitter account. This limited information about the nodes leads to several challenges and limitations in the network analysis.\n
+
+Since network analysis often relies on the characteristics of the nodes to gain useful insights about the network.\n
+
+Without node characteristics, it becomes difficult to perform attribute-based network analysis. This includes identifying influential nodes based on their attributes, such as age, gender, race, or state, which could have contributed with useful infromation in an analysis. Limitation of node characteristics reduces the interpretability of the analysis. E.g you can calculate different centralities for the nodes within the network, and highlight some key nodes, but when you do not have charateristics for the nodes, it becomes difficult to analyze if the nodes have some similarities.\n
+\n\n
+Some of the attributes for the nodes that could have contributed with insightful information for this dataset would be:\n
+* State the originates from/represent.
+* Gender
+* Age
+* Race
+* Years of experience in the U.S. Congress
+         """)
 
 st.write("""
 
     In this app you can see a network analysis of the Twitter interactions between US Congress members. \n
+    
+         
     Pick the kind of Centrality you would like to look at from the dropdown menu and become informed 
 
          """)
