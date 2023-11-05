@@ -19,14 +19,14 @@ import pandas as pd
 import networkx as nx
 from pyvis.network import Network
 import networkx as nx
+import networkx as nx
+from pyvis.network import Network
 
 
 # Set header title
 st.title('Network Graph Visualization of Drug-Drug hej Interactions')
 
 
-import networkx as nx
-from pyvis.network import Network
 
 nx_graph = nx.cycle_graph(10)
 nx_graph.nodes[1]['title'] = 'Number 1'
