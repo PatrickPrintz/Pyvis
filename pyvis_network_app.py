@@ -32,7 +32,7 @@ G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
 st.title('Network Graph Visualization of Drug-Drug Interactions')
 
 # Initiate PyVis network object
-drug_net = Network(height='465px', bgcolor='#222222', font_color='white')
+drug_net = Network(height='4650px', bgcolor='#222222', font_color='white')
 
 
 # Take Networkx graph and translate it to a PyVis graph format
