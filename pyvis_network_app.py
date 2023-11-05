@@ -43,7 +43,7 @@ drug_net.repulsion(node_distance=420, central_gravity=0.33,spring_length=110, sp
 # Save and read graph as HTML file (on Streamlit Sharing)
 
 try:
-    path = '/Users/patrickprintz/Desktop/Universitet/Pyvis/'
+    path = '/tmp'
     drug_net.save_graph(f'{path}/pyvis_graph.html')
     HtmlFile = open(f'{path}/pyvis_graph.html', 'r', encoding='utf-8')
 
