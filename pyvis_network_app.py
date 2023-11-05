@@ -32,14 +32,14 @@ G = nx.read_edgelist(edgelist_file, create_using=nx.DiGraph(), data=True)
 st.title('Network Graph Visualization of Drug-Drug Interactions')
 
 # Initiate PyVis network object
-drug_net = Network(height='4650px', bgcolor='#222222', font_color='white')
+drug_net = Network()
 
 
 # Take Networkx graph and translate it to a PyVis graph format
 drug_net.from_nx(G)
 
 # Generate network with specific layout settings
-drug_net.repulsion(node_distance=420, central_gravity=0.33,spring_length=110, spring_strength=0.10,damping=0.95)
+drug_net.repulsion(node_distance=420)
 # Save and read graph as HTML file (on Streamlit Sharing)
 
 try:
